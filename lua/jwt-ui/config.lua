@@ -1,6 +1,6 @@
 local M = {}
 
-M.setup = function(opts)
+function M.setup(opts)
 	opts = opts or {}
 	local jwt = require("jwt_ui.init")
 
@@ -10,7 +10,6 @@ M.setup = function(opts)
 		vim.keymap.set("n", "<leader>lj", jwt.run_jwt_ui, { desc = "Open JWT UI" })
 	end
 
-	-- Comando :JWTUI
 	vim.api.nvim_create_user_command("JWTUI", function()
 		jwt.run_jwt_ui()
 	end, {})
