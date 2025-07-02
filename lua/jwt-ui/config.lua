@@ -2,7 +2,7 @@ local M = {}
 
 M.setup = function(opts)
 	opts = opts or {}
-	local jwt = require("jwt_ui")
+	local jwt = require("jwt_ui.init")
 
 	if opts.key then
 		vim.keymap.set("n", opts.key, jwt.run_jwt_ui, { desc = "Open JWT UI" })
